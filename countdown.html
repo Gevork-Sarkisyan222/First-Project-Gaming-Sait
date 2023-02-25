@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Установка</title>
+</head>
+<body>
+    <div dir="ltr" style="text-align: left;" trbidi="on">
+        <center>
+        <span id="countdown">Подождите 45 секунд.</span></center>
+        <br />
+        <div style="text-align: center;">
+        <b>Готовим скачку для вашей игры...</b><br />
+        <a class='button' href="Input Your Target Link here" target="_blank" id="download_link" style="display: none;">Download Now</a>
+        <noscript>JavaScript needs to be enabled in order to be able to download.</noscript>
+        <script type="application/javascript">
+        (function(){
+           var message = "%d seconds before download link appears";
+           // seconds before download link becomes visible
+           var count = 45;
+           var countdown_element = document.getElementById("countdown");
+           var download_link = document.getElementById("download_link");
+           var timer = setInterval(function(){
+              // if countdown equals 0, the next condition will evaluate to false and the else-construct will be executed
+              if (count) {
+                  // display text
+                  countdown_element.innerHTML = "Вы должны подождать %d секунд.".replace("%d", count);
+                  // decrease counter
+                  count--;
+              } else {
+                  // stop timer
+                  clearInterval(timer);
+                  // hide countdown
+                  countdown_element.style.display = "none";
+                  // show download link
+                  download_link.style.display = "";
+              }
+           }, 1000);
+        })();
+        </script></div></div>
+      
+</body>
+</html>
